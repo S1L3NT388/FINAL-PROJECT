@@ -13,11 +13,10 @@ function saveLesson() {
     const subject = document.getElementById('subject').value;
     const teacher = document.getElementById('teacher').value;
     const day = document.getElementById('day').value;
-    // Це у тебе вже є:
     const time = document.getElementById('time').value;
 
     if (!subject || !teacher || !time) {
-        alert("Заповни всі поля, не будь як Діо!");
+        alert("Заповни всі поля.");
         return;
     }
 
@@ -68,7 +67,6 @@ function renderSchedule() {
     const listContainer = document.querySelector('.lesson-list');
     listContainer.innerHTML = '';
 
-    // Групуємо заняття по днях
     const grouped = schedule.reduce((acc, lesson) => {
         if (!acc[lesson.day]) acc[lesson.day] = [];
         acc[lesson.day].push(lesson);
